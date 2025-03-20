@@ -1,0 +1,10 @@
+services:
+
+  kafka-testowa:
+    image: apache/kafka:4.0.0
+    container_name: kafka-testowa
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "9092:9092"
+
