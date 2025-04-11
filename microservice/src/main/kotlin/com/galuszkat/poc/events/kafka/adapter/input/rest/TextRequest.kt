@@ -1,8 +1,5 @@
-package com.galuszkat.poc.events.kafka.domain
+package com.galuszkat.poc.events.kafka.adapter.input.rest
 
-import java.time.Instant
-
-data class TextData(
-    val text: String,
-    val modified: Instant
+data class TextRequest(
+    val text: String
 )

@@ -1,4 +1,4 @@
-package pl.allegro.pricemanagement.repricing.offerrepricerupdater.utiladapter
+package com.galuszkat.poc.events.kafka.util
 
 import java.time.Clock
 import java.time.Clock.systemUTC

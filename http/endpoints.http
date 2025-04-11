@@ -3,5 +3,5 @@ POST localhost:8080/text
 Content-Type: application/json
 
 {
-    "text": "Wysyłam event: {{$random.uuid}}"
+    "text": "lol: {{$random.uuid}}"
 }

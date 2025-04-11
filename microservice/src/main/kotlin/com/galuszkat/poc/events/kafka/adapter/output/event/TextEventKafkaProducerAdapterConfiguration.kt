@@ -1,5 +1,6 @@
 package com.galuszkat.poc.events.kafka.adapter.output.event
 
+import com.galuszkat.poc.events.kafka.domain.TextData
 import org.apache.kafka.clients.producer.ProducerConfig
 import org.apache.kafka.common.serialization.StringSerializer
 import org.springframework.context.annotation.Bean
@@ -10,14 +11,14 @@ import org.springframework.kafka.core.ProducerFactory
 import org.springframework.kafka.support.serializer.JsonSerializer
 
 @Configuration
-internal class KafkaProducerAdapterConfiguration {
+internal class TextEventKafkaProducerAdapterConfiguration {
 
     @Bean
-    fun kafkaTemplate(): KafkaTemplate<String, String> =
-        KafkaTemplate(producerFactory())
+    fun textDataKafkaTemplate(): KafkaTemplate<String, TextData> =
+        KafkaTemplate(textDataKafkaProducerFactory())
 
     @Bean
-    fun producerFactory(): ProducerFactory<String, String> =
+    fun textDataKafkaProducerFactory(): ProducerFactory<String, TextData> =
         DefaultKafkaProducerFactory(mapOf(
             ProducerConfig.BOOTSTRAP_SERVERS_CONFIG to "localhost:9092",
             ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG to StringSerializer::class.java,
